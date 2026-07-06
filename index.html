@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaserud WebDesign AS | Nettsider som konverterer</title>
+<meta name="description" content="Aaserud WebDesign AS lager moderne, raske og effektive nettsider for bedrifter. Webdesign, nettbutikk, SEO og support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- Shared logo mark (referenced via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f7cff"/>
+      <stop offset="100%" stop-color="#7c5cff"/>
+    </linearGradient>
+  </defs>
+  <symbol id="logo-mark" viewBox="0 0 100 100">
+    <path d="M22 78 L50 22 L78 78" fill="none" stroke="url(#logoGrad)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="50" cy="60" r="7" fill="url(#logoGrad)"/>
+  </symbol>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#hjem" class="logo">
+      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#hjem">Hjem</a>
+      <a href="#tjenester">Tjenester</a>
+      <a href="#om-oss">Om oss</a>
+      <a href="#prosjekter">Prosjekter</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <a href="#kontakt" class="btn btn-primary btn-nav">Få tilbud</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Åpne meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hjem">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Webdesign &amp; Utvikling</p>
+      <h1>Vi bygger nettsider<br>som <span class="text-gradient">jobber for deg</span></h1>
+      <p class="hero-lead">
+        Aaserud WebDesign AS lager moderne, raske og brukervennlige nettsider
+        for små og mellomstore bedrifter — fra idé til lansering.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Start ditt prosjekt</a>
+        <a href="#tjenester" class="btn btn-ghost">Se tjenester</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TJENESTER -->
+  <section class="section" id="tjenester">
+    <div class="container">
+      <p class="eyebrow center">Tjenester</p>
+      <h2 class="section-title center">Hva jeg kan hjelpe deg med</h2>
+
+      <div class="grid grid-4">
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 21h6M12 16v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Webdesign</h3>
+          <p>Skreddersydde, moderne nettsider tilpasset din bedrift og dine kunder.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M6 6l1 12h10l1-12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="21" r="1" fill="currentColor"/><circle cx="16" cy="21" r="1" fill="currentColor"/></svg>
+          </div>
+          <h3>Nettbutikk</h3>
+          <p>Salgsklare nettbutikkløsninger med sikker betaling og enkel drift.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>SEO &amp; Synlighet</h3>
+          <p>Bedre synlighet i søkemotorer, slik at de riktige kundene finner deg.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Vedlikehold &amp; Support</h3>
+          <p>Løpende oppfølging, oppdateringer og support etter lansering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OM OSS -->
+  <section class="section section-alt" id="om-oss">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <p class="eyebrow">Om oss</p>
+        <h2 class="section-title">Personlig oppfølging, profesjonelt resultat</h2>
+        <p>
+          Aaserud WebDesign AS ble startet med ett mål: å hjelpe bedrifter med å få
+          en nettside de faktisk er stolte av. Du får direkte kontakt gjennom hele
+          prosessen — ingen mellomledd, ingen unødvendig byråkrati.
+        </p>
+        <p>
+          Jeg kombinerer design og teknisk utvikling for å levere nettsider som er
+          raske, ser bra ut på alle enheter, og er enkle å finne på Google.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Skreddersydd design</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">1:1</span>
+            <span class="stat-label">Direkte kontakt</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">Nettsiden jobber for deg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-dot dot-red"></div>
+          <div class="visual-dot dot-yellow"></div>
+          <div class="visual-dot dot-green"></div>
+          <div class="visual-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSJEKTER -->
+  <section class="section" id="prosjekter">
+    <div class="container">
+      <p class="eyebrow center">Prosjekter</p>
+      <h2 class="section-title center">Kommer snart</h2>
+      <p class="section-lead center">
+        Portefølje er under oppbygging. Ta kontakt for referanser og eksempler på tidligere arbeid.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card project-card reveal">
+          <div class="project-thumb">
+            <img src="bilder/Bakeri Grua.png" alt="Skjermbilde av Bakeri Grua-nettsiden" loading="lazy">
+          </div>
+          <h3>Bakeri Grua</h3>
+          <p>En generisk bakeri-nettside laget som eksempel — viser hvordan en varm, innbydende nettside for et lokalt bakeri kan se ut.</p>
+          <a href="https://oskaraaserud-dev.github.io/Bakeri-Grua/" class="project-link" target="_blank" rel="noopener">
+            Se prosjektet
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="card project-card reveal">
+          <div class="project-thumb">
+            <img src="bilder/Frisør Johnsen.png" alt="Skjermbilde av Frisør Johnsen-nettsiden" loading="lazy">
+          </div>
+          <h3>Frisør Johnsen</h3>
+          <p>En generisk frisørsalong-nettside laget som eksempel — viser hvordan en innbydende nettside for en lokal frisør kan se ut.</p>
+          <a href="https://oskaraaserud-dev.github.io/Fris-r-Johnsen/" class="project-link" target="_blank" rel="noopener">
+            Se prosjektet
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="card project-card reveal">
+          <div class="project-placeholder"></div>
+          <h3>Prosjekt kommer</h3>
+          <p>Nytt prosjekt legges til her.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="section section-alt" id="kontakt">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="section-title">La oss snakke om ditt prosjekt</h2>
+        <p>Send meg en melding, eller ta kontakt direkte — jeg svarer så raskt jeg kan.</p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">E-post</span>
+            <a href="mailto:oskar.aaserud@gmail.com">oskar.aaserud@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Telefon</span>
+            <a href="tel:+4790649527">+47 906 49 527</a>
+          </li>
+        </ul>
+
+        <div class="social-links">
+          <span class="social-icon" title="Facebook (kommer snart)" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.1c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.4-3.9 4V10.4H8.3v3h2.1V21h3.1z"/></svg>
+          </span>
+          <span class="social-icon" title="Instagram (kommer snart)" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+          </span>
+          <span class="social-icon" title="LinkedIn (kommer snart)" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20v-6.34c0-3.4-1.82-4.98-4.24-4.98-1.96 0-2.83 1.08-3.32 1.83V8.5H9.56c.04.87 0 11.5 0 11.5h2.88v-6.42c0-.34.03-.69.13-.94.28-.69.92-1.42 2-1.42 1.41 0 1.97 1.07 1.97 2.65V20H20z"/></svg>
+          </span>
+        </div>
+        <p class="social-note">Sosiale medier kommer snart.</p>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/oskar.aaserud@gmail.com" method="POST">
+        <div class="form-row">
+          <label for="name">Navn</label>
+          <input type="text" id="name" name="Navn" required placeholder="Ola Nordmann">
+        </div>
+        <div class="form-row">
+          <label for="email">E-post</label>
+          <input type="email" id="email" name="E-post" required placeholder="ola@epost.no">
+        </div>
+        <div class="form-row">
+          <label for="message">Melding</label>
+          <textarea id="message" name="Melding" rows="5" required placeholder="Fortell kort om prosjektet ditt..."></textarea>
+        </div>
+
+        <!-- FormSubmit-innstillinger -->
+        <input type="hidden" name="_subject" value="Ny henvendelse fra Aaserud WebDesign-nettsiden">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" id="next-field" value="takk.html">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn btn-primary btn-full">Send melding</button>
+        <p class="form-note" id="form-note"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#hjem" class="logo">
+      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
+    </a>
+    <p>&copy; <span id="year"></span> Aaserud WebDesign AS. Alle rettigheter reservert.</p>
+    <div class="social-links footer-social">
+      <span class="social-icon" title="Facebook (kommer snart)" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.1c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.4-3.9 4V10.4H8.3v3h2.1V21h3.1z"/></svg>
+      </span>
+      <span class="social-icon" title="Instagram (kommer snart)" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+      </span>
+      <span class="social-icon" title="LinkedIn (kommer snart)" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20v-6.34c0-3.4-1.82-4.98-4.24-4.98-1.96 0-2.83 1.08-3.32 1.83V8.5H9.56c.04.87 0 11.5 0 11.5h2.88v-6.42c0-.34.03-.69.13-.94.28-.69.92-1.42 2-1.42 1.41 0 1.97 1.07 1.97 2.65V20H20z"/></svg>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
