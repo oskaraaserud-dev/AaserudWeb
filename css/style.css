@@ -339,8 +339,10 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
+
+.about-visual { position: sticky; top: 110px; }
 
 .about-text p { color: var(--text-muted); margin-bottom: 16px; }
 
