@@ -5,7 +5,7 @@
    samtykket til statistikk. Ingen Analytics-cookie kan derfor settes på forhånd.
 
    Valget lagres i localStorage (ikke en cookie), slik at vi ikke engang setter
-   en cookie før samtykke – og slik at banneret ikke dukker opp ved hvert besøk.
+   en cookie før samtykke, og slik at banneret ikke dukker opp ved hvert besøk.
 
    Ingen eksterne bibliotek. Alt som skjer er synlig i denne filen.
    ============================================================================= */
@@ -30,7 +30,7 @@
   var CONSENT_VERSION = 1;
 
   /* ---------------------------------------------------------------------------
-     LAGRING – lese og skrive brukerens valg
+     LAGRING: lese og skrive brukerens valg
      --------------------------------------------------------------------------- */
 
   // Leser lagret valg. Returnerer null hvis brukeren ikke har bestemt seg ennå,
@@ -58,13 +58,13 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
-      /* Ignorer – da gjelder valget kun for denne økten. */
+      /* Ignorer, da gjelder valget kun for denne økten. */
     }
     return data;
   }
 
   /* ---------------------------------------------------------------------------
-     GOOGLE ANALYTICS 4 – lastes KUN når statistikk er samtykket
+     GOOGLE ANALYTICS 4: lastes KUN når statistikk er samtykket
      --------------------------------------------------------------------------- */
 
   var gaLoaded = false; // Hindrer at skriptet lastes to ganger.
@@ -106,7 +106,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     BANNER-MARKUP – bygges i JS så vi slipper å duplisere HTML på hver side
+     BANNER-MARKUP: bygges i JS så vi slipper å duplisere HTML på hver side
      --------------------------------------------------------------------------- */
 
   var bannerEl = null; // Referanse til banneret så vi kan vise/skjule det.
@@ -153,7 +153,7 @@
       '    <div class="consent-category">',
       '      <div>',
       '        <p class="consent-cat-name">Statistikk</p>',
-      '        <p class="consent-cat-desc">Google Analytics – anonym bruksstatistikk.</p>',
+      '        <p class="consent-cat-desc">Google Analytics for anonym bruksstatistikk.</p>',
       '      </div>',
       '      <label class="consent-switch">',
       '        <input type="checkbox" data-consent-toggle="statistics">',
@@ -177,7 +177,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     VISNING – vise/skjule banner og bytte mellom de to visningene
+     VISNING: vise/skjule banner og bytte mellom de to visningene
      --------------------------------------------------------------------------- */
 
   function showBanner() {
@@ -203,7 +203,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     HANDLINGER – hva som skjer når brukeren trykker på knappene
+     HANDLINGER: hva som skjer når brukeren trykker på knappene
      --------------------------------------------------------------------------- */
 
   // Tar imot brukerens endelige valg, lagrer det og starter/stopper Analytics.
@@ -245,7 +245,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     "ENDRE SAMTYKKE" – lenken i footeren åpner banneret på nytt
+     "ENDRE SAMTYKKE": lenken i footeren åpner banneret på nytt
      --------------------------------------------------------------------------- */
 
   function wireReopenLinks() {
