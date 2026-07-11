@@ -13,6 +13,9 @@
 </head>
 <body>
 
+<!-- Lar tastatur-/skjermleserbrukere hoppe rett til innholdet -->
+<a href="#innhold" class="skip-link">Hopp til hovedinnhold</a>
+
 <!-- Shared logo mark (referenced via <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -30,7 +33,7 @@
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="#hjem" class="logo">
-      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
       <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
     </a>
 
@@ -50,7 +53,7 @@
   </div>
 </header>
 
-<main>
+<main id="innhold" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero" id="hjem">
@@ -77,7 +80,7 @@
 
       <div class="grid grid-4">
         <div class="card reveal">
-          <div class="card-icon">
+          <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 21h6M12 16v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <h3>Webdesign</h3>
@@ -85,7 +88,7 @@
         </div>
 
         <div class="card reveal">
-          <div class="card-icon">
+          <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M6 6l1 12h10l1-12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="21" r="1" fill="currentColor"/><circle cx="16" cy="21" r="1" fill="currentColor"/></svg>
           </div>
           <h3>Nettbutikk</h3>
@@ -93,7 +96,7 @@
         </div>
 
         <div class="card reveal">
-          <div class="card-icon">
+          <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <h3>SEO &amp; Synlighet</h3>
@@ -101,7 +104,7 @@
         </div>
 
         <div class="card reveal">
-          <div class="card-icon">
+          <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
           <h3>Vedlikehold &amp; Support</h3>
@@ -186,7 +189,7 @@
           </div>
           <h3>Bakeri Grua</h3>
           <p>En generisk bakeri-nettside laget som eksempel — viser hvordan en varm, innbydende nettside for et lokalt bakeri kan se ut.</p>
-          <a href="https://oskaraaserud-dev.github.io/Bakeri-Grua/" class="project-link" target="_blank" rel="noopener">
+          <a href="https://oskaraaserud-dev.github.io/Bakeri-Grua/" class="project-link" target="_blank" rel="noopener" aria-label="Se prosjektet Bakeri Grua (åpnes i ny fane)">
             Se prosjektet
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -197,7 +200,7 @@
           </div>
           <h3>Frisør Johnsen</h3>
           <p>En generisk frisørsalong-nettside laget som eksempel — viser hvordan en innbydende nettside for en lokal frisør kan se ut.</p>
-          <a href="https://oskaraaserud-dev.github.io/Fris-r-Johnsen/" class="project-link" target="_blank" rel="noopener">
+          <a href="https://oskaraaserud-dev.github.io/Fris-r-Johnsen/" class="project-link" target="_blank" rel="noopener" aria-label="Se prosjektet Frisør Johnsen (åpnes i ny fane)">
             Se prosjektet
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -208,7 +211,7 @@
           </div>
           <h3>Treningssenter</h3>
           <p>En generisk nettside for et treningssenter laget som eksempel — viser hvordan en energisk, innbydende nettside for et lokalt treningssenter kan se ut.</p>
-          <a href="https://oskaraaserud-dev.github.io/treningssenter/" class="project-link" target="_blank" rel="noopener">
+          <a href="https://oskaraaserud-dev.github.io/treningssenter/" class="project-link" target="_blank" rel="noopener" aria-label="Se prosjektet Treningssenter (åpnes i ny fane)">
             Se prosjektet
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -237,16 +240,16 @@
         </ul>
 
         <div class="social-links">
-          <a class="social-icon" href="https://www.facebook.com/profile.php?id=61591811129227" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+          <a class="social-icon" href="https://www.facebook.com/profile.php?id=61591811129227" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook (åpnes i ny fane)">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.1c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.4-3.9 4V10.4H8.3v3h2.1V21h3.1z"/></svg>
           </a>
-          <a class="social-icon" href="https://www.instagram.com/aaserudweb/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+          <a class="social-icon" href="https://www.instagram.com/aaserudweb/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram (åpnes i ny fane)">
             <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
           </a>
-          <a class="social-icon" href="https://www.tiktok.com/@aaserudweb" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
+          <a class="social-icon" href="https://www.tiktok.com/@aaserudweb" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok (åpnes i ny fane)">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3h-3v12.2a2.8 2.8 0 1 1-2-2.68V9.4a5.8 5.8 0 1 0 5 5.75V9.9a7.7 7.7 0 0 0 4.5 1.45V8.35A4.7 4.7 0 0 1 16.5 3z"/></svg>
           </a>
-          <a class="social-icon" href="https://www.linkedin.com/in/oskar-aaserud-960162421/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <a class="social-icon" href="https://www.linkedin.com/in/oskar-aaserud-960162421/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn (åpnes i ny fane)">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20v-6.34c0-3.4-1.82-4.98-4.24-4.98-1.96 0-2.83 1.08-3.32 1.83V8.5H9.56c.04.87 0 11.5 0 11.5h2.88v-6.42c0-.34.03-.69.13-.94.28-.69.92-1.42 2-1.42 1.41 0 1.97 1.07 1.97 2.65V20H20z"/></svg>
           </a>
         </div>
@@ -274,7 +277,7 @@
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <button type="submit" class="btn btn-primary btn-full">Send melding</button>
-        <p class="form-note" id="form-note"></p>
+        <p class="form-note" id="form-note" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -284,22 +287,23 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="#hjem" class="logo">
-      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
       <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
     </a>
     <p>&copy; <span id="year"></span> Aaserud WebDesign. Alle rettigheter reservert.
+      &middot; <a href="personvern.html">Personvern</a>
       &middot; <button type="button" class="consent-reopen" data-consent-reopen>Endre samtykke</button></p>
     <div class="social-links footer-social">
-      <a class="social-icon" href="https://www.facebook.com/profile.php?id=61591811129227" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+      <a class="social-icon" href="https://www.facebook.com/profile.php?id=61591811129227" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook (åpnes i ny fane)">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.1c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.4-3.9 4V10.4H8.3v3h2.1V21h3.1z"/></svg>
       </a>
-      <a class="social-icon" href="https://www.instagram.com/aaserudweb/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+      <a class="social-icon" href="https://www.instagram.com/aaserudweb/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram (åpnes i ny fane)">
         <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
       </a>
-      <a class="social-icon" href="https://www.tiktok.com/@aaserudweb" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
+      <a class="social-icon" href="https://www.tiktok.com/@aaserudweb" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok (åpnes i ny fane)">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3h-3v12.2a2.8 2.8 0 1 1-2-2.68V9.4a5.8 5.8 0 1 0 5 5.75V9.9a7.7 7.7 0 0 0 4.5 1.45V8.35A4.7 4.7 0 0 1 16.5 3z"/></svg>
       </a>
-      <a class="social-icon" href="https://www.linkedin.com/in/oskar-aaserud-960162421/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+      <a class="social-icon" href="https://www.linkedin.com/in/oskar-aaserud-960162421/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn (åpnes i ny fane)">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20v-6.34c0-3.4-1.82-4.98-4.24-4.98-1.96 0-2.83 1.08-3.32 1.83V8.5H9.56c.04.87 0 11.5 0 11.5h2.88v-6.42c0-.34.03-.69.13-.94.28-.69.92-1.42 2-1.42 1.41 0 1.97 1.07 1.97 2.65V20H20z"/></svg>
       </a>
     </div>

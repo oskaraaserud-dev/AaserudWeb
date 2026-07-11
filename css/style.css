@@ -10,6 +10,12 @@
   --accent: #4f7cff;
   --accent-2: #7c5cff;
   --accent-gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+  /* Mørkere varianter til tekst/knapper der hvit eller lys bakgrunn krever
+     WCAG AA-kontrast (4.5:1). Brand-blåfargen over beholdes til grafikk og
+     til tekst på mørk bakgrunn, der den allerede har god kontrast. */
+  --accent-strong: #3a5ed6;    /* tekstlenker på lys bakgrunn */
+  --accent-2-strong: #6f4fe6;  /* mørkere lilla, kun i knappe-gradienten */
+  --field-border: #767f94;     /* synlig kant på skjemafelt (WCAG 1.4.11) */
   --radius: 14px;
   --font-head: 'Space Grotesk', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -46,6 +52,41 @@ a { color: inherit; text-decoration: none; }
 
 img { max-width: 100%; display: block; }
 
+/* ===== Tilgjengelighet: synlig tastaturfokus ===== */
+/* Tydelig fokus-omriss for ALT som kan nås med Tab (lenker, knapper, felt).
+   :focus-visible vises kun ved tastaturbruk, ikke ved museklikk. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* "Hopp til hovedinnhold"-lenke: skjult til den får tastaturfokus. */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 1001;
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* Synlig for skjermlesere, skjult visuelt (f.eks. «(åpnes i ny fane)»). */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .container {
   width: 100%;
   max-width: var(--container);
@@ -66,11 +107,13 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-strong);   /* mørkere blå for lesbarhet på lys bakgrunn */
   margin-bottom: 12px;
 }
 
 .eyebrow.center { display: block; text-align: center; }
+/* På den mørke hero-baren har brand-blåfargen god kontrast – behold den der. */
+.hero .eyebrow { color: var(--accent); }
 
 .section-title { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 18px; }
 .section-title.center { text-align: center; }
@@ -92,7 +135,9 @@ img { max-width: 100%; display: block; }
 }
 
 .btn-primary {
-  background: var(--accent-gradient);
+  /* Litt dypere gradient enn brand-fargen, slik at hvit tekst får minst
+     4.5:1 kontrast (WCAG AA for normal tekst). Nesten umerkelig visuelt. */
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-2-strong));
   color: #fff;
   box-shadow: 0 8px 24px rgba(79, 124, 255, 0.35);
 }
@@ -328,7 +373,7 @@ img { max-width: 100%; display: block; }
   margin-top: 14px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-strong);
   transition: gap 0.2s ease;
 }
 .project-link svg { width: 15px; height: 15px; }
@@ -388,7 +433,7 @@ img { max-width: 100%; display: block; }
 .contact-list li { display: flex; flex-direction: column; margin-bottom: 16px; }
 .contact-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
 .contact-list a { font-size: 1.05rem; font-weight: 500; transition: color 0.2s ease; }
-.contact-list a:hover { color: var(--accent); }
+.contact-list a:hover { color: var(--accent-strong); }
 
 .social-links { display: flex; gap: 14px; margin-top: 8px; }
 .social-icon {
@@ -425,7 +470,7 @@ img { max-width: 100%; display: block; }
 .form-row input,
 .form-row textarea {
   background: var(--bg-alt);
-  border: 1px solid var(--border);
+  border: 1px solid var(--field-border);  /* mørkere kant så feltet er synlig (WCAG 1.4.11) */
   border-radius: 10px;
   padding: 12px 14px;
   color: var(--text);
@@ -435,13 +480,21 @@ img { max-width: 100%; display: block; }
   transition: border-color 0.2s ease;
 }
 
+/* Placeholder mørk nok til å være lesbar (kravet dekkes uansett av label-en). */
+.form-row input::placeholder,
+.form-row textarea::placeholder { color: var(--text-muted); }
+
+/* Behold aksent-kanten ved fokus, men gi også et tydelig fokus-omriss for
+   tastaturbrukere (erstatter det tidligere «outline: none»). */
 .form-row input:focus,
-.form-row textarea:focus {
-  outline: none;
-  border-color: var(--accent);
+.form-row textarea:focus { border-color: var(--accent); }
+.form-row input:focus-visible,
+.form-row textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
-.form-note { margin-top: 14px; font-size: 0.85rem; color: var(--accent); text-align: center; min-height: 1.2em; }
+.form-note { margin-top: 14px; font-size: 0.85rem; color: var(--accent-strong); text-align: center; min-height: 1.2em; }
 
 /* ===== Footer ===== */
 .site-footer {
@@ -511,6 +564,41 @@ img { max-width: 100%; display: block; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
+/* ===== Innholdssider (personvern o.l.) ===== */
+/* Kompakt mørk topp-bar: gir den faste headeren en lesbar bakgrunn. */
+.legal-hero { padding: 150px 0 70px; }
+.legal-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+/* Lesbar brødtekst med god luft og behagelig lesebredde. */
+.legal { max-width: 760px; }
+.legal h2 {
+  font-size: 1.3rem;
+  margin: 40px 0 12px;
+  color: var(--text);
+}
+.legal p { margin-bottom: 16px; color: var(--text-muted); }
+.legal ul { margin: 0 0 16px 22px; color: var(--text-muted); }
+.legal li { margin-bottom: 8px; }
+.legal strong { color: var(--text); }
+.legal a { color: var(--accent-strong); text-decoration: underline; }
+.legal code {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+}
+.legal-updated {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: 24px;
+}
+
 /* ===== Samtykke-banner (cookie consent) ===== */
 /* Ligger fast nederst på skjermen med en svak, halvgjennomsiktig bakgrunn.
    Fargene gjenbruker sidens variabler slik at banneret matcher resten. */
@@ -567,8 +655,8 @@ img { max-width: 100%; display: block; }
   border-color: var(--border);
 }
 .consent .btn-ghost:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-strong);
+  border-color: var(--accent-strong);
 }
 
 /* --- Tilpass-visning --- */
@@ -634,8 +722,27 @@ img { max-width: 100%; display: block; }
 }
 .consent-reopen:hover { color: var(--accent); }
 
+/* "Personvern"-lenken i footeren – samme dempede stil som "Endre samtykke". */
+.footer-inner p a {
+  color: var(--dark-text-muted);
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+.footer-inner p a:hover { color: var(--accent); }
+
 /* Mobil: la de tre knappene stå under hverandre i full bredde. */
 @media (max-width: 480px) {
   .consent-actions { flex-direction: column; }
   .consent-btn { width: 100%; }
+}
+
+/* ===== Respekter «redusert bevegelse» (brukere som er følsomme for animasjon) ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }

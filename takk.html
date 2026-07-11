@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<a href="#innhold" class="skip-link">Hopp til hovedinnhold</a>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -29,17 +31,17 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
       <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
     </a>
   </div>
 </header>
 
-<main>
+<main id="innhold" tabindex="-1">
   <section class="hero thanks-hero">
     <div class="hero-glow"></div>
     <div class="container hero-inner thanks-inner">
-      <div class="thanks-icon">
+      <div class="thanks-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <p class="eyebrow">Melding sendt</p>
@@ -58,10 +60,11 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-mark"><use href="#logo-mark"/></svg>
+      <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
       <span class="logo-text">Aaserud<span class="logo-accent">WebDesign</span></span>
     </a>
     <p>&copy; <span id="year"></span> Aaserud WebDesign AS. Alle rettigheter reservert.
+      &middot; <a href="personvern.html">Personvern</a>
       &middot; <button type="button" class="consent-reopen" data-consent-reopen>Endre samtykke</button></p>
   </div>
 </footer>
