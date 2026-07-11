@@ -510,3 +510,132 @@ img { max-width: 100%; display: block; }
   .section { padding: 80px 0; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
+
+/* ===== Samtykke-banner (cookie consent) ===== */
+/* Ligger fast nederst på skjermen med en svak, halvgjennomsiktig bakgrunn.
+   Fargene gjenbruker sidens variabler slik at banneret matcher resten. */
+.consent {
+  position: fixed;
+  inset: 0;                       /* dekker hele viewporten */
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;          /* banneret sitter i bunnen */
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 14, 23, 0.45);  /* dempet bakteppe */
+}
+.consent[hidden] { display: none; }
+
+.consent-box {
+  width: 100%;
+  max-width: 640px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(10, 14, 23, 0.25);
+  padding: 26px 26px 22px;
+}
+
+.consent-title {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.consent-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* De tre valgene: samme størrelse og plass = likeverdige (ekomloven-krav). */
+.consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.consent-btn {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 130px;
+}
+
+/* .btn-ghost er laget for mørk bakgrunn. På det lyse banner-kortet gir vi
+   "Avvis alle" og "Tilpass" lesbar tekst og synlig ramme, like tydelig som
+   "Godta alle" – ingen av valgene skal fremstå som mindre tilgjengelig. */
+.consent .btn-ghost {
+  color: var(--text);
+  border-color: var(--border);
+}
+.consent .btn-ghost:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Tilpass-visning --- */
+.consent-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+.consent-category:first-of-type { border-top: none; }
+.consent-cat-name { font-weight: 600; color: var(--text); }
+.consent-cat-desc { font-size: 0.85rem; color: var(--text-muted); }
+.consent-cat-fixed { font-size: 0.85rem; color: var(--text-muted); white-space: nowrap; }
+
+/* Av/på-bryter for statistikk (ren CSS, ingen bilder). */
+.consent-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.consent-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+.consent-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.2s ease;
+  flex: none;
+}
+.consent-slider::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+.consent-switch input:checked + .consent-slider { background: var(--accent); }
+.consent-switch input:checked + .consent-slider::after { transform: translateX(20px); }
+.consent-switch input:focus-visible + .consent-slider {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.consent-switch-label { font-size: 0.9rem; color: var(--text-muted); }
+.consent-customize .consent-actions { margin-top: 18px; }
+
+/* "Endre samtykke"-lenke i footeren (ser ut som en lenke, er en <button>). */
+.consent-reopen {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--dark-text-muted);
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+.consent-reopen:hover { color: var(--accent); }
+
+/* Mobil: la de tre knappene stå under hverandre i full bredde. */
+@media (max-width: 480px) {
+  .consent-actions { flex-direction: column; }
+  .consent-btn { width: 100%; }
+}
