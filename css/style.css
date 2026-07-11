@@ -231,6 +231,7 @@ img { max-width: 100%; display: block; }
   background: none;
   border: none;
   cursor: pointer;
+  color: inherit;   /* arv headerens farge, så strekene (currentColor) bytter til svart når headeren blir hvit */
 }
 .nav-toggle span {
   display: block;
