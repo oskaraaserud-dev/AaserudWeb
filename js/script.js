@@ -53,19 +53,64 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Contact form feedback
+// Kontaktskjema
+// Vi sender skjemaet i bakgrunnen (fetch) i stedet for å la nettleseren
+// navigere bort til Formspree. Da kan vi vise en tydelig feilmelding hvis
+// tjenesten er nede, i stedet for at brukeren blir sittende og vente.
 const form = document.getElementById('contact-form');
 const formNote = document.getElementById('form-note');
 const nextField = document.getElementById('next-field');
 
+// Absolutt URL, så den peker riktig både lokalt og i produksjon.
+const TAKK_URL = new URL('takk.html', window.location.href).href;
+
 if (nextField) {
-  // Resolve to an absolute URL so FormSubmit redirects back to *this* site
-  // (works both locally via file:// and once the site is hosted on a domain).
-  nextField.value = new URL('takk.html', window.location.href).href;
+  // Kun reserve: hvis JavaScript ikke kjører, poster nettleseren skjemaet
+  // direkte, og Formspree sender brukeren hit etterpå.
+  nextField.value = TAKK_URL;
 }
 
 if (form) {
-  form.addEventListener('submit', () => {
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Meldingen brukeren får hvis noe går galt. Vi gir alltid en vei videre.
+  function showError() {
+    formNote.classList.add('error');
+    formNote.innerHTML =
+      'Beklager, meldingen kunne ikke sendes akkurat nå. Prøv igjen, eller send ' +
+      'en e-post direkte til <a href="mailto:oskar@aaserudweb.no">oskar@aaserudweb.no</a>.';
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    formNote.classList.remove('error');
     formNote.textContent = 'Sender melding...';
+    if (submitBtn) submitBtn.disabled = true;
+
+    // Gi opp etter 15 sekunder, så skjemaet aldri kan henge i det uendelige.
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+        signal: controller.signal
+      });
+
+      if (response.ok) {
+        window.location.href = TAKK_URL;
+        return;
+      }
+      showError();
+    } catch (err) {
+      // Nettverksfeil, timeout, eller tjenesten er nede.
+      showError();
+    } finally {
+      clearTimeout(timeout);
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }

@@ -310,26 +310,29 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/oskar@aaserudweb.no" method="POST">
+      <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mvzegqer" method="POST">
         <div class="form-row">
           <label for="name">Navn</label>
           <input type="text" id="name" name="Navn" required placeholder="Ola Nordmann">
         </div>
         <div class="form-row">
           <label for="email">E-post</label>
-          <input type="email" id="email" name="E-post" required placeholder="ola@epost.no">
+          <!-- Feltnavnet må være "email" for at Formspree skal sette Reply-To,
+               slik at du kan svare kunden direkte fra innboksen. -->
+          <input type="email" id="email" name="email" required placeholder="ola@epost.no">
         </div>
         <div class="form-row">
           <label for="message">Melding</label>
           <textarea id="message" name="Melding" rows="5" required placeholder="Fortell kort om prosjektet ditt..."></textarea>
         </div>
 
-        <!-- FormSubmit-innstillinger -->
+        <!-- Formspree-innstillinger -->
         <input type="hidden" name="_subject" value="Ny henvendelse fra AaserudWeb-nettsiden">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        <!-- _next brukes kun som reserve hvis JavaScript ikke kjører: da poster
+             nettleseren skjemaet direkte, og Formspree sender brukeren hit. -->
         <input type="hidden" name="_next" id="next-field" value="takk.html">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Honeypot: spam-roboter fyller ut skjulte felt. Formspree forkaster de innsendingene. -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <button type="submit" class="btn btn-primary btn-full">Send melding</button>
         <p class="form-note" id="form-note" aria-live="polite"></p>

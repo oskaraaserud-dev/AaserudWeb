@@ -496,6 +496,9 @@ img { max-width: 100%; display: block; }
 }
 
 .form-note { margin-top: 14px; font-size: 0.85rem; color: var(--accent-strong); text-align: center; min-height: 1.2em; }
+/* Feilmelding hvis skjemaet ikke lot seg sende. Mørk rød for god lesbarhet (WCAG AA). */
+.form-note.error { color: #b3261e; }
+.form-note.error a { color: inherit; text-decoration: underline; font-weight: 600; }
 
 /* ===== Footer ===== */
 .site-footer {
