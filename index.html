@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AaserudWeb | Webdesign og nettsider i Hadeland</title>
-<meta name="description" content="AaserudWeb lager moderne, raske og effektive nettsider for bedrifter i Hadeland og resten av landet. Webdesign, nettbutikk, SEO og support.">
+<title>Webdesign i Bergen | Nettsider for bedrifter | AaserudWeb</title>
+<meta name="description" content="AaserudWeb lager raske, moderne nettsider for små bedrifter i Bergen og Vestland – og fortsatt for kunder i Hadeland. Webdesign, nettbutikk, SEO og support.">
 <link rel="canonical" href="https://aaserudweb.no/">
 
 <!-- Open Graph (deling på Facebook, LinkedIn, m.m.) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AaserudWeb">
 <meta property="og:locale" content="nb_NO">
-<meta property="og:title" content="AaserudWeb | Webdesign og nettsider i Hadeland">
-<meta property="og:description" content="Moderne, raske og effektive nettsider for bedrifter i Hadeland og resten av landet. Webdesign, nettbutikk, SEO og support.">
+<meta property="og:title" content="Webdesign i Bergen | Nettsider for bedrifter | AaserudWeb">
+<meta property="og:description" content="Moderne, raske nettsider for små bedrifter i Bergen og Vestland – og for kunder i Hadeland. Webdesign, nettbutikk, SEO og support.">
 <meta property="og:url" content="https://aaserudweb.no/">
 <meta property="og:image" content="https://aaserudweb.no/bilder/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AaserudWeb, webdesign og nettsider i Hadeland">
+<meta property="og:image:alt" content="AaserudWeb – webdesign og nettsider for bedrifter i Bergen">
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AaserudWeb | Webdesign og nettsider i Hadeland">
-<meta name="twitter:description" content="Moderne, raske og effektive nettsider for bedrifter i Hadeland og resten av landet.">
+<meta name="twitter:title" content="Webdesign i Bergen | Nettsider for bedrifter | AaserudWeb">
+<meta name="twitter:description" content="Moderne, raske nettsider for små bedrifter i Bergen og Vestland. Webdesign, nettbutikk, SEO og support.">
 <meta name="twitter:image" content="https://aaserudweb.no/bilder/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,38 +30,180 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-<!-- Strukturert data: hjelper Google forstå at dette er en lokal webdesign-tjeneste -->
+<!-- Strukturert data: lokal webdesign-tjeneste med tjenesteområde (Bergen) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://aaserudweb.no/#business",
-  "name": "AaserudWeb",
-  "description": "Webdesign og utvikling av moderne, raske nettsider for små og mellomstore bedrifter i Hadeland og resten av Norge.",
-  "url": "https://aaserudweb.no/",
-  "image": "https://aaserudweb.no/bilder/og-image.png",
-  "logo": "https://aaserudweb.no/favicon.svg",
-  "email": "oskar@aaserudweb.no",
-  "telephone": "+4790649527",
-  "priceRange": "$$",
-  "founder": { "@type": "Person", "name": "Oskar Aaserud" },
-  "parentOrganization": { "@type": "Organization", "name": "Kai Aaserud Design AS" },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Grua",
-    "addressRegion": "Innlandet",
-    "addressCountry": "NO"
-  },
-  "areaServed": [
-    { "@type": "Place", "name": "Hadeland" },
-    { "@type": "Country", "name": "Norge" }
-  ],
-  "knowsAbout": ["Webdesign", "Nettbutikk", "SEO", "Nettsider"],
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61591811129227",
-    "https://www.instagram.com/aaserudweb/",
-    "https://www.tiktok.com/@aaserudweb",
-    "https://www.linkedin.com/in/oskar-aaserud-960162421/"
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://aaserudweb.no/#business",
+      "name": "AaserudWeb",
+      "description": "Webdesign og utvikling av moderne, raske nettsider for små og mellomstore bedrifter i Bergen og Vestland, og for kunder i Hadeland og resten av Norge.",
+      "url": "https://aaserudweb.no/",
+      "image": "https://aaserudweb.no/bilder/og-image.png",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://aaserudweb.no/#logo",
+        "url": "https://aaserudweb.no/favicon.svg",
+        "contentUrl": "https://aaserudweb.no/favicon.svg"
+      },
+      "email": "oskar@aaserudweb.no",
+      "telephone": "+4790649527",
+      "priceRange": "$$",
+      "currenciesAccepted": "NOK",
+      "knowsLanguage": ["nb-NO", "en"],
+      "founder": { "@id": "https://aaserudweb.no/#oskar" },
+      "employee": { "@id": "https://aaserudweb.no/#oskar" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Kai Aaserud Design AS",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Organisasjonsnummer",
+          "value": "917796440"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bergen",
+        "addressRegion": "Vestland",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bergen", "sameAs": "https://no.wikipedia.org/wiki/Bergen" },
+        { "@type": "AdministrativeArea", "name": "Vestland", "sameAs": "https://no.wikipedia.org/wiki/Vestland" },
+        { "@type": "Place", "name": "Hadeland", "sameAs": "https://no.wikipedia.org/wiki/Hadeland" },
+        { "@type": "Country", "name": "Norge", "sameAs": "https://no.wikipedia.org/wiki/Norge" }
+      ],
+      "knowsAbout": [
+        "Webdesign",
+        "Nettsider",
+        "Nettbutikk",
+        "SEO",
+        "Søkemotoroptimalisering",
+        "Responsivt webdesign",
+        "Webutvikling"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tjenester",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Webdesign",
+              "serviceType": "Webdesign",
+              "description": "Skreddersydde, moderne nettsider tilpasset din bedrift og dine kunder.",
+              "provider": { "@id": "https://aaserudweb.no/#business" },
+              "areaServed": { "@type": "City", "name": "Bergen" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Nettbutikk",
+              "serviceType": "Netthandel",
+              "description": "Salgsklare nettbutikkløsninger med sikker betaling og enkel drift.",
+              "provider": { "@id": "https://aaserudweb.no/#business" },
+              "areaServed": { "@type": "City", "name": "Bergen" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO og synlighet",
+              "serviceType": "Søkemotoroptimalisering",
+              "description": "Bedre synlighet i søkemotorer, slik at de riktige kundene finner deg.",
+              "provider": { "@id": "https://aaserudweb.no/#business" },
+              "areaServed": { "@type": "City", "name": "Bergen" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vedlikehold og support",
+              "serviceType": "Drift og vedlikehold av nettsider",
+              "description": "Løpende oppfølging, oppdateringer og support etter lansering.",
+              "provider": { "@id": "https://aaserudweb.no/#business" },
+              "areaServed": { "@type": "City", "name": "Bergen" }
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61591811129227",
+        "https://www.instagram.com/aaserudweb/",
+        "https://www.tiktok.com/@aaserudweb",
+        "https://www.linkedin.com/in/oskar-aaserud-960162421/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aaserudweb.no/#oskar",
+      "name": "Oskar Aaserud",
+      "jobTitle": "Webdesigner og utvikler",
+      "url": "https://aaserudweb.no/#om-oss",
+      "worksFor": { "@id": "https://aaserudweb.no/#business" },
+      "homeLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen",
+          "addressRegion": "Vestland",
+          "addressCountry": "NO"
+        }
+      },
+      "knowsAbout": ["Webdesign", "Frontend-utvikling", "SEO", "Nettbutikk"],
+      "sameAs": ["https://www.linkedin.com/in/oskar-aaserud-960162421/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aaserudweb.no/#website",
+      "url": "https://aaserudweb.no/",
+      "name": "AaserudWeb",
+      "inLanguage": "nb-NO",
+      "publisher": { "@id": "https://aaserudweb.no/#business" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aaserudweb.no/#webpage",
+      "url": "https://aaserudweb.no/",
+      "name": "Webdesign i Bergen | Nettsider for bedrifter | AaserudWeb",
+      "description": "AaserudWeb lager raske, moderne nettsider for små bedrifter i Bergen og Vestland – og fortsatt for kunder i Hadeland.",
+      "isPartOf": { "@id": "https://aaserudweb.no/#website" },
+      "about": { "@id": "https://aaserudweb.no/#business" },
+      "primaryImageOfPage": { "@id": "https://aaserudweb.no/#logo" },
+      "inLanguage": "nb-NO"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://aaserudweb.no/#faq",
+      "isPartOf": { "@id": "https://aaserudweb.no/#webpage" },
+      "inLanguage": "nb-NO",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jobber du bare med kunder i Bergen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Jeg holder til i Bergen og tar gjerne oppdrag i hele Bergensområdet og Vestland, men jeg jobber like gjerne med kunder andre steder i landet. Jeg er opprinnelig fra Hadeland og har fortsatt kunder der. En nettside bygges og følges opp digitalt, så avstanden er sjelden noe problem — vi tar møtene på video eller telefon, akkurat som det passer deg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva koster en nettside?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det kommer an på omfanget. En enkel presentasjonsside med noen få seksjoner er langt rimeligere enn en nettbutikk med produktkatalog og betaling. Jeg gir alltid et fast pristilbud før vi setter i gang, så du vet hva det koster på forhånd — ingen timepris som løper. Send meg en kort beskrivelse av hva du trenger, så får du et konkret tilbud."
+          }
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -114,11 +256,11 @@
   <section class="hero" id="hjem">
     <div class="hero-glow"></div>
     <div class="container hero-inner">
-      <p class="eyebrow">Webdesign &amp; Utvikling</p>
+      <p class="eyebrow">Webdesign &amp; utvikling i Bergen</p>
       <h1>Jeg bygger nettsider<br>som <span class="text-gradient">jobber for deg</span></h1>
       <p class="hero-lead">
-        AaserudWeb lager moderne, raske og brukervennlige nettsider
-        for små og mellomstore bedrifter, fra idé til lansering.
+        AaserudWeb lager moderne, raske og brukervennlige nettsider for små og
+        mellomstore bedrifter i Bergen og resten av landet, fra idé til lansering.
       </p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn btn-primary">Start ditt prosjekt</a>
@@ -188,10 +330,11 @@
           men som fortjener å fremstå like proft som de store aktørene.
         </p>
         <p>
-          Jeg holder til på Grua i Hadeland, og tar gjerne oppdrag både lokalt og for kunder andre
-          steder i landet. Siden jeg er ett menneske og ikke et byrå med mange ledd, får
-          du alltid direkte kontakt med meg gjennom hele prosessen, fra første idé til
-          ferdig nettside, uten mellomledd eller unødvendig byråkrati.
+          Jeg holder til i Bergen, og tar gjerne oppdrag både her i byen og andre steder
+          i landet. Jeg er opprinnelig fra Hadeland og har fortsatt kunder der, som jeg
+          følger opp akkurat som før. Siden jeg er ett menneske og ikke et byrå med mange
+          ledd, får du alltid direkte kontakt med meg gjennom hele prosessen, fra første
+          idé til ferdig nettside, uten mellomledd eller unødvendig byråkrati.
         </p>
         <p>
           I praksis betyr det at jeg kombinerer design og teknisk utvikling selv, slik at
@@ -275,15 +418,51 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <p class="eyebrow center">Vanlige spørsmål</p>
+      <h2 class="section-title center">Godt å vite før vi setter i gang</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h3>Jobber du bare med kunder i Bergen?</h3>
+          <p>
+            Nei. Jeg holder til i Bergen og tar gjerne oppdrag i hele Bergensområdet og
+            Vestland, men jeg jobber like gjerne med kunder andre steder i landet. Jeg er
+            opprinnelig fra Hadeland og har fortsatt kunder der. En nettside bygges og
+            følges opp digitalt, så avstanden er sjelden noe problem — vi tar møtene på
+            video eller telefon, akkurat som det passer deg.
+          </p>
+        </div>
+
+        <div class="faq-item reveal">
+          <h3>Hva koster en nettside?</h3>
+          <p>
+            Det kommer an på omfanget. En enkel presentasjonsside med noen få seksjoner er
+            langt rimeligere enn en nettbutikk med produktkatalog og betaling. Jeg gir
+            alltid et fast pristilbud før vi setter i gang, så du vet hva det koster på
+            forhånd — ingen timepris som løper. Send meg en kort beskrivelse av hva du
+            trenger, så får du et konkret tilbud.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section class="section section-alt" id="kontakt">
     <div class="container contact-grid">
       <div class="contact-info reveal">
         <p class="eyebrow">Kontakt</p>
         <h2 class="section-title">La oss snakke om ditt prosjekt</h2>
-        <p>Send meg en melding, eller ta kontakt direkte. Jeg svarer så raskt jeg kan.</p>
+        <p>Send meg en melding, eller ta kontakt direkte. E-post er raskeste vei til meg — jeg er innom gjennom dagen og svarer så raskt jeg kan.</p>
 
         <ul class="contact-list">
+          <li>
+            <span class="contact-label">Sted</span>
+            <span class="contact-value">Bergen, Vestland &middot; oppdrag i hele Norge</span>
+          </li>
           <li>
             <span class="contact-label">E-post</span>
             <a href="mailto:oskar@aaserudweb.no">oskar@aaserudweb.no</a>
@@ -348,6 +527,9 @@
       <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
       <span class="logo-text">Aaserud<span class="logo-accent">Web</span></span>
     </a>
+    <p class="footer-nap">AaserudWeb &middot; Bergen, Vestland &middot;
+      <a href="tel:+4790649527">+47 906 49 527</a> &middot;
+      <a href="mailto:oskar@aaserudweb.no">oskar@aaserudweb.no</a></p>
     <p>&copy; <span id="year"></span> AaserudWeb. Alle rettigheter reservert.
       &middot; <a href="personvern.html">Personvern</a>
       &middot; <button type="button" class="consent-reopen" data-consent-reopen>Endre samtykke</button></p>
